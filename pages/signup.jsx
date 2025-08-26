@@ -6,9 +6,21 @@ function SignupPage() {
     const [name,setName]=useState("");
     const [email,setEmail]=useState("");
 
-    async function handleSubmit() {
+    async function handleSubmit(e) {
+        e.preventDefault()
+             const response = await fetch('/api/signup', {
+                     method:'POST',
+                     headers:{
+                        'Content-Type':'application/json'
 
-        return 0;
+                     },
+                     body:JSON.stringify({name,email})
+                    
+
+
+             });
+             const data = await response.json();
+             console.log(data);
      }
     return (
          <div className={styles.container}>

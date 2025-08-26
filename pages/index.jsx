@@ -12,9 +12,27 @@ function HomePage()  {
 
     },[]);
     async function handleMetaMaskLogin() {
-        return 0;
-
+  try {
+    if (typeof window.ethereum === "undefined") {
+      throw new Error("MetaMask is not installed!");
     }
+
+   
+    const provider = new ethers.BrowserProvider(window.ethereum);
+
+    // Request account access
+    const accounts = await provider.send("eth_requestAccounts", []);
+    console.log("Connected accounts:", accounts);
+
+    const signer = await provider.getSigner();
+    const address = await signer.getAddress();
+    console.log("Connected address:", address);
+  } catch (error) {
+    console.error("MetaMask login error:", error);
+    alert("Failed to login with MetaMask! Check console for details.");
+  }
+}
+
 
     return (
 
