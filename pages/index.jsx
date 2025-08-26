@@ -27,6 +27,22 @@ function HomePage()  {
     const signer = await provider.getSigner();
     const address = await signer.getAddress();
     console.log("Connected address:", address);
+
+    const response=await fetch('/api/nonce', {
+      method:'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body:JSON.stringify({address})
+
+    })
+    if(!response.ok) {
+        const error=await response.json();
+        console.log(error);
+    }
+    const resp=response.json();
+    const nonce=resp.message;
+    console.log(nonce);
   } catch (error) {
     console.error("MetaMask login error:", error);
     alert("Failed to login with MetaMask! Check console for details.");
