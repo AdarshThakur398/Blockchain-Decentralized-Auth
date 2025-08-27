@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3f4f6; /* light gray */
+}
+
+.card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #1f2937; /* dark gray */
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.infoBox {
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  word-break: break-word;
+}
+
+.label {
+  font-weight: 500;
+  color: #6b7280; /* medium gray */
+  margin-bottom: 0.25rem;
+}
+
+.value {
+  font-weight: 600;
+  color: #111827; /* almost black */
+}
+
+.chainBadge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.ethereum { background-color: #627eea; }
+.polygon { background-color: #8247e5; }
+.bsc { background-color: #f0b90b; }
+.avalanche { background-color: #e84142; }
+.optimism { background-color: #ff0420; }
+.arbitrum { background-color: #28a0f0; }
+.unknown { background-color: #6b7280; }
