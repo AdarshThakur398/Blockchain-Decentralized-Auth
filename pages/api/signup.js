@@ -40,7 +40,7 @@ async function handler(req, res) {
 
   
     return res.status(200).json({
-      message: "Signup successful! Copy your private key and import it into MetaMask and go to Login page to continue.",
+      message: "Signup successful! Copy your private key and import it into MetaMask to connect and go to Login page to continue.",
       privateKey: blockchainPrivateKey,
     });
   } catch (error) {

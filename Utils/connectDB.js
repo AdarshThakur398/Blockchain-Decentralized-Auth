@@ -1,16 +1,16 @@
-import mongoose from 'mongoose';
-const uri = "mongodb://root:password@localhost:27017/";
-const connectDB=async () => {
-    try {
-        await mongoose.connect(uri);
-        console.log("mongodb connected");
+import mongoose from "mongoose";
 
-    }
-    catch(err) {
-        console.log(err);
-       
-    }
-
-}
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("MongoDB connected to Atlas");
+  } catch (err) {
+    console.error(" MongoDB connection failed:", err.message);
+    process.exit(1);
+  }
+};
 
 export default connectDB;
