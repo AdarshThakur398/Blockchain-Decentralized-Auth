@@ -13,18 +13,18 @@ async function handler(req, res) {
             const addressExist = await User.findOne({ blockchainAddress: stringAddress });
             
             if (!addressExist) {
-                return res.status(400).json({ message: "Please Register First." }); // Added return
+                return res.status(400).json({ message: "Please Register First OR switch to registered account on Metamask." }); 
             }
             
             const nonce = crypto.randomBytes(32).toString('hex');
-            return res.status(200).json({ message: nonce }); // Added return
+            return res.status(200).json({ message: nonce });
             
         } catch (err) {
             console.log(err);
-            return res.status(500).json({ message: "An error occurred!!" }); // Added return
+            return res.status(500).json({ message: "An error occurred!!" });
         }
     } else {
-        return res.status(405).json({ message: "Method not allowed!" }); // Added return
+        return res.status(405).json({ message: "Method not allowed!" });
     }
 }
 
