@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@next/swc-win32-x64-msvc": "^15.5.0",
+  
     "ethers": "^6.15.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.18.0",
